@@ -1,4 +1,4 @@
-# [2W] 구글 홈페이지 제작
-*이미지 올리기
+## [2W] 구글 홈페이지 제작
+*코드펜에 이미지 업로드
 
-![google](https://github.com/ju-hyeon/ReactProject/assets/62934706/65c93cec-b0f8-4476-a7b5-6f25462f1eae)
+![Google](https://github.com/ju-hyeon/ReactProject/assets/62934706/6c10fcc0-a960-4e19-b04e-6a400e0c4174)
