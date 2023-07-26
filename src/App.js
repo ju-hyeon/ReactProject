@@ -7,43 +7,34 @@
     http://localhost:3000/
 */
 
-import logo from './logo.svg';
-import './App.css';
-
-
-// 컴포넌트 생성
-function Header() {
-return  <header>
-            <h1><a href="/">WEB</a></h1>
-          </header>
-}
-
-function Nav() {
-  return  <nav>
-              <ol>
-                  <li><a href="/read/1">html</a></li>
-                  <li><a href="/read/2">css</a></li>
-                  <li><a href="/read/3">js</a></li>
-              </ol>
-            </nav>
-}
-
-
-function Article() {
-  return  <article>
-              <h2>Welcome</h2>
-              Hello, WEB
-            </article>
-}
+import Header from './components/Header/Header'
+import WindowSearch from './components/Main/WindowSearch'
+import MainContents from './components/Main/MainContents'
+import Footer from './components/Footer/Footer'
 
 function App() {
+  // 작은 규모의 스타일을 관리할 때 내부에서 스타일 객체 정의
+  const container = {
+      padding: "20px 20px 0 0",
+      textAlign: "center"
+  };
+
   return (
-    <div>
-      <Header></Header>
-      <Nav></Nav>
-      <Article></Article>
+    <div style={container}>
+      {/* Header */}
+      <Header />
+
+      {/* 검색창 */}
+      <WindowSearch />
+
+      {/* 최근 접속한 사이트 목록 */}
+      <MainContents />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
+
 
 export default App;
