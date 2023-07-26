@@ -1,0 +1,11 @@
+.sectionContents {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+
+.sectionContents > div > img {
+  margin: 10px 10px;
+}
