@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './MainContents.module.css';
+//import styles from './MainContents.module.css';
 
 const MainContents = () => {
   return (
     <section>
-        <div class={styles.sectionContents}>
+        <div>
           <div>
             <img src="http://placehold.it/80X80" alt="이미지 1" />
             <img src="http://placehold.it/80X80" alt="이미지 2" />
@@ -22,6 +22,8 @@ const MainContents = () => {
             <img src="http://placehold.it/80X80" alt="이미지 12" /> 
           </div>
         </div>
+
+
   </section>
   );
 };

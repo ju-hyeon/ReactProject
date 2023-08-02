@@ -6,32 +6,27 @@
 
     http://localhost:3000/
 */
-
 import Header from './components/Header/Header'
 import WindowSearch from './components/Main/WindowSearch'
 import MainContents from './components/Main/MainContents'
 import Footer from './components/Footer/Footer'
+import Body from './components/Body/Body'
 
 function App() {
   // 작은 규모의 스타일을 관리할 때 내부에서 스타일 객체 정의
-  const container = {
-      padding: "20px 20px 0 0",
-      textAlign: "center"
-  };
 
   return (
-    <div style={container}>
-      {/* Header */}
-      <Header />
-
-      {/* 검색창 */}
-      <WindowSearch />
-
-      {/* 최근 접속한 사이트 목록 */}
-      <MainContents />
-
-      {/* Footer */}
-      <Footer />
+    <div class="grid grid-cols-6 gap-4">
+      <div class="col-start-1 col-end-7 ">
+        <Header />
+      </div>
+      <div className="flex justify-center items-center col-start-2 col-span-4">
+        <Body />
+      </div>
+      
+      <div class="col-start-1 col-end-7 ...">
+        <Footer />
+      </div>
     </div>
   );
 }
