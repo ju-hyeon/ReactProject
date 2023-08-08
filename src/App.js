@@ -17,10 +17,10 @@ function App() {
 
   return (
     <div class="grid grid-cols-6 gap-4">
-      <div class="col-start-1 col-end-7 ">
+      <div class="col-start-1 col-end-7 mb-8">
         <Header />
       </div>
-      <div className="flex justify-center items-center col-start-2 col-span-4">
+      <div className="flex justify-center items-center col-start-2 col-span-4 mt-8">
         <Body />
       </div>
       
