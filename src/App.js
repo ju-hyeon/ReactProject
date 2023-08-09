@@ -7,8 +7,6 @@
     http://localhost:3000/
 */
 import Header from './components/Header/Header'
-import WindowSearch from './components/Main/WindowSearch'
-import MainContents from './components/Main/MainContents'
 import Footer from './components/Footer/Footer'
 import Body from './components/Body/Body'
 
@@ -16,17 +14,19 @@ function App() {
   // 작은 규모의 스타일을 관리할 때 내부에서 스타일 객체 정의
 
   return (
-    <div class="grid grid-cols-6 gap-4">
-      <div class="col-start-1 col-end-7 mb-8">
+    <div className="grid grid-cols-6 gap-4">
+      <div className="col-start-1 col-end-7 mb-8">
         <Header />
       </div>
+
       <div className="flex justify-center items-center col-start-2 col-span-4 mt-8">
         <Body />
       </div>
       
-      <div class="col-start-1 col-end-7 ...">
+      <div className="col-start-1 col-end-7 ...">
         <Footer />
       </div>
+      
     </div>
   );
 }
