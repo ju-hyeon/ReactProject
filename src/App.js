@@ -7,32 +7,31 @@
     http://localhost:3000/
 */
 
-import Header from './components/Header/Header'
-import WindowSearch from './components/Main/WindowSearch'
-import MainContents from './components/Main/MainContents'
-import Footer from './components/Footer/Footer'
+import React from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserView } from 'react-device-detect'
+
+import GoogleLayout from './components/GoogleLayout'
+import WorkStatus from './components/WorkStatus'
+
+
 
 function App() {
   // 작은 규모의 스타일을 관리할 때 내부에서 스타일 객체 정의
-  const container = {
-      padding: "20px 20px 0 0",
-      textAlign: "center"
-  };
 
   return (
-    <div style={container}>
-      {/* Header */}
-      <Header />
+    <>
+      <BrowserView>
+        <BrowserRouter>
+          <Routes>
 
-      {/* 검색창 */}
-      <WindowSearch />
+            <Route path="/api/google" element={<GoogleLayout />} />
+            <Route path="/api/workStatus" element={<WorkStatus />} />
 
-      {/* 최근 접속한 사이트 목록 */}
-      <MainContents />
-
-      {/* Footer */}
-      <Footer />
-    </div>
+          </Routes>
+        </BrowserRouter>
+      </BrowserView>
+    </>
   );
 }
 
