@@ -6,28 +6,32 @@
 
     http://localhost:3000/
 */
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import Body from './components/Body/Body'
+
+import React from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserView } from 'react-device-detect'
+
+import GoogleLayout from './components/GoogleLayout'
+import WorkStatus from './components/WorkStatus'
+
+
 
 function App() {
   // 작은 규모의 스타일을 관리할 때 내부에서 스타일 객체 정의
 
   return (
-    <div className="grid grid-cols-6 gap-4">
-      <div className="col-start-1 col-end-7 mb-8">
-        <Header />
-      </div>
+    <>
+      <BrowserView>
+        <BrowserRouter>
+          <Routes>
 
-      <div className="flex justify-center items-center col-start-2 col-span-4 mt-8">
-        <Body />
-      </div>
-      
-      <div className="col-start-1 col-end-7 ...">
-        <Footer />
-      </div>
-      
-    </div>
+            <Route path="/api/google" element={<GoogleLayout />} />
+            <Route path="/api/workStatus" element={<WorkStatus />} />
+
+          </Routes>
+        </BrowserRouter>
+      </BrowserView>
+    </>
   );
 }
 
