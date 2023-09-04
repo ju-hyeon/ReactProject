@@ -3,9 +3,12 @@ import { Modal, Button } from 'antd';
 
 import Details from './Details'
 import PageHeader from "./PageHeader";
+import {useRecoilState} from "recoil";
+import {contentStore} from "../data/store";
 
 const WorkStatus = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [contents, setContents] = useRecoilState(contentStore);
 
   const handleCancel = () => {
     setIsOpen(false);
@@ -145,8 +148,8 @@ const WorkStatus = () => {
                     <td className="border px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-800">94</td>
                     <td className="border px-6 py-4 whitespace-nowrap text-sm text-gray-800">86</td>
                     <td className="border px-6 py-4 whitespace-nowrap text-sm text-gray-800">6</td>
-                    <td className="border px-6 py-4 whitespace-nowrap text-sm text-gray-800">2</td>
-                    <td className="border px-6 py-4 whitespace-nowrap text-sm text-gray-800">0</td>
+                    <td className="border px-6 py-4 whitespace-nowrap text-sm text-gray-800">{contents.clientName}</td>
+                    <td className="border px-6 py-4 whitespace-nowrap text-sm text-gray-800">{contents.shipToName}</td>
                   </tr>
                 </tbody>
               </table>
