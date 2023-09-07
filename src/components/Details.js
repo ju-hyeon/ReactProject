@@ -3,6 +3,7 @@ import {Button} from 'antd';
 import axios from 'axios';
 import {useRecoilState, useRecoilValue} from "recoil";
 import {contentStore} from "../data/store";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Details = ({closeModal}) => {
     const [category, setCategory] = useState('');
@@ -11,11 +12,11 @@ const Details = ({closeModal}) => {
     const [recoilContents, setRecoilContents] = useRecoilState(contentStore);
 
 
-        console.log(`clientName : ${contents.clientName}`);
-        console.log(`shipToName : ${contents.shipToName}`);
     const handleChangeData = (field, value) => {
         if (field === 'category') setCategory(value);
         else if (field === 'content') setContent(value);
+
+        // recoil 사용
         else if (field === 'clientName') {
             setRecoilContents({ ...recoilContents, clientName: value });
         } else if (field === 'shipToName') { setRecoilContents({...recoilContents, shipToName: value});
@@ -24,9 +25,6 @@ const Details = ({closeModal}) => {
     const handleDataRecoilSave = () => {
         setRecoilContents({...recoilContents});
         alert("저장되었습니다.");
-
-        console.log(`clientName : ${contents.clientName}`);
-        console.log(`shipToName : ${contents.shipToName}`);
     }
 
 
@@ -139,7 +137,7 @@ const Details = ({closeModal}) => {
         <div className="flex flex-col w-screen-full m-6">
             <div className="bg-white mb-6 border-b">
                   <span className="font-bold text-lg text-gray-700">
-                    영업 기회 등록
+                    <FontAwesomeIcon icon={["far", "file"]} className="w-5 h-5 mr-1" /> 영업 기회 등록
                   </span>
             </div>
 
@@ -222,9 +220,7 @@ const Details = ({closeModal}) => {
                             />
                         </td>
 
-                        <td className="border px-5 py-4 whitespace-nowrap text-sm text-gray-800 font-bold bg-indigo-50 my-8">Bill
-                            To Name
-                        </td>
+                        <td className="border px-5 py-4 whitespace-nowrap text-sm text-gray-800 font-bold bg-indigo-50 my-8">Bill To Name</td>
                         <td className="border px-5 py-4 whitespace-nowrap text-right text-sm">
                             <input type="text"
                                    name="content"
@@ -237,9 +233,7 @@ const Details = ({closeModal}) => {
                     </tr>
 
                     <tr>
-                        <td scope="col"
-                            className="border px-5 py-2 text-sm font-bold text-gray-800 bg-indigo-50 my-8">Channel
-                        </td>
+                        <td scope="col" className="border px-5 py-2 text-sm font-bold text-gray-800 bg-indigo-50 my-8">Channel</td>
                         <td scope="col" className="border px-5 py-2 items-center" colSpan={"3"}>
                             <div className=''>
                                 <select
@@ -254,8 +248,7 @@ const Details = ({closeModal}) => {
                     </tr>
 
                     <tr>
-                        <td className="border px-5 py-4 whitespace-nowrap text-sm font-bold text-gray-800 bg-indigo-50 my-8">Market
-                            Type
+                        <td className="border px-5 py-4 whitespace-nowrap text-sm font-bold text-gray-800 bg-indigo-50 my-8">Market Type
                             <span className='text-sm text-red-500 font-bold'>*</span>
                         </td>
                         <td className="border px-5 py-4 whitespace-nowrap text-sm text-gray-800">
@@ -281,8 +274,7 @@ const Details = ({closeModal}) => {
 
                     </tr>
                     <tr>
-                        <td className="border px-5 py-4 whitespace-nowrap text-sm font-bold text-gray-800 bg-indigo-50 my-8">사업자등록번호
-                        </td>
+                        <td className="border px-5 py-4 whitespace-nowrap text-sm font-bold text-gray-800 bg-indigo-50 my-8">사업자등록번호</td>
                         <td className="border px-5 py-4 whitespace-nowrap text-sm text-gray-800">
                             <input type="text"
                                    className="flex w-full py-2 px-3 block border border-gray-200 rounded-md text-sm mr-4"
@@ -300,8 +292,7 @@ const Details = ({closeModal}) => {
 
                     </tr>
                     <tr>
-                        <td className="border px-5 py-4 whitespace-nowrap text-sm font-bold text-gray-800 bg-indigo-50 my-8">대표자명
-                        </td>
+                        <td className="border px-5 py-4 whitespace-nowrap text-sm font-bold text-gray-800 bg-indigo-50 my-8">대표자명</td>
                         <td className="border px-5 py-4 whitespace-nowrap text-sm text-gray-800">
                             <input type="text"
                                    className="flex w-full py-2 px-3 border border-gray-200 rounded-md text-sm mr-4"
@@ -394,7 +385,7 @@ const Details = ({closeModal}) => {
                     </tbody>
                 </table>
 
-                {/* api test */}
+                {/* Button */}
                 <div className='flex justify-end gap-4'>
                     <Button onClick={closeModal}>닫기</Button>
                     <Button danger onClick={handleDataDelete}>삭제</Button>

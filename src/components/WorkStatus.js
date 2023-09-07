@@ -6,6 +6,8 @@ import PageHeader from "./PageHeader";
 import {useRecoilState} from "recoil";
 import {contentStore} from "../data/store";
 
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+
 const WorkStatus = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [contents, setContents] = useRecoilState(contentStore);
@@ -35,7 +37,7 @@ const WorkStatus = () => {
           <table className="min-w-full mb-6">
             <thead>
               <tr>
-                <td scope="col" className="border px-5 py-2 text-left text-sm font-bold text-gray-800 bg-indigo-50 my-8">검색어</td>
+                <td scope="col" className="border px-5 py-2 text-left text-sm font-bold text-gray-800 bg-indigo-50 my-8">검색어  </td>
                 <td scope="col" className="border px-5 py-2 items-center" colSpan={"3"}>
                   <div className='flex flex-auto gap-3 items-center'>
                     <div className=''>
@@ -52,8 +54,9 @@ const WorkStatus = () => {
                     </div>
 
                     <div className='flex'>
-                      <button type="button" className="flex items-center justify-center py-2 px-5 rounded-full bg-indigo-500 text-white font-bold shadow-sm transition-all text-xs">
-                        검색
+                      {/*<button type="button" className="flex items-center justify-center py-2 px-5 rounded-full bg-indigo-500 text-white font-bold shadow-sm transition-all text-xs">*/}
+                      <button type="button" className="flex items-center justify-center py-2 px-1 rounded-full bg-white text-gray-500 font-bold shadow-sm transition-all text-xs">
+                        <FontAwesomeIcon icon={["fas", "magnifying-glass"]} className="w-4 h-4" />
                       </button>
                     </div>
 
@@ -102,8 +105,8 @@ const WorkStatus = () => {
                     <input type="text" className="flex w-full py-2 px-3 border border-gray-200 rounded-md text-sm mr-4" placeholder="주문번호를 입력하세요.">
                     </input>
 
-                    <button type="button" className="flex py-3 px-5 text-center rounded-full bg-indigo-500 text-white font-bold shadow-sm align-middle transition-all text-xs mr-2">
-                      검색
+                    <button type="button" className="flex items-center justify-center py-2 rounded-full bg-white text-gray-500 font-bold shadow-sm transition-all text-xs">
+                      <FontAwesomeIcon icon={["fas", "magnifying-glass"]} className="w-4 h-4" />
                     </button>
                   </div>
                 </td>
@@ -118,28 +121,23 @@ const WorkStatus = () => {
                 <thead>
                   <tr className="bg-indigo-50 my-8">
                     <td scope="col" className="border row-span-2 px-6 py-3 text-center text-sm font-bold text-gray-800" rowSpan={"2"}>
-                      전체
-                      <span className="material-icons ml-1 text-base text-blue-400">info</span>
+                      전체 <FontAwesomeIcon icon={["fas", "circle-info"]} className="w-4 h-4 mr-2 text-blue-500" />
                     </td>
                     <th scope="col" className="border col-span-2 px-6 py-3 text-center text-sm font-bold text-gray-800" colSpan={"2"}>설치 미완료</th>
                     <th scope="col" className="border col-span-2 px-6 py-3 text-center text-sm font-bold text-gray-800" colSpan={"2"}>설치 완료</th>
                   </tr>
                   <tr>
                     <th scope="col" className="border px-6 py-3 text-center text-sm font-bold text-gray-800">
-                      계획 미수립
-                      <span className="material-icons ml-1 text-base text-blue-400">info</span>
+                      계획 미수립 <FontAwesomeIcon icon={["fas", "circle-info"]} className="w-4 h-4 mr-2 text-blue-500" />
                     </th>
                     <th scope="col" className="border col-span-2 px-6 py-3 text-center text-sm font-bold text-gray-800">
-                      계획 수립
-                      <span className="material-icons ml-1 text-base text-blue-400">info</span>
+                      계획 수립 <FontAwesomeIcon icon={["fas", "circle-info"]} className="w-4 h-4 mr-2 text-blue-500" />
                     </th>
                     <th scope="col" className="border col-span-2 px-6 py-3 text-center text-sm font-bold text-gray-800">
-                      Billing 미완료
-                      <span className="material-icons ml-1 text-base text-blue-400">info</span>
+                      Billing 미완료 <FontAwesomeIcon icon={["fas", "circle-info"]} className="w-4 h-4 mr-2 text-blue-500" />
                     </th>
                     <th scope="col" className="border col-span-2 px-6 py-3 text-center text-sm font-bold text-gray-800">
-                      Billing 완료
-                      <span className="material-icons ml-1 text-base text-blue-400">info</span>
+                      Billing 완료 <FontAwesomeIcon icon={["fas", "circle-info"]} className="w-4 h-4 mr-2 text-blue-500" />
                     </th>
                   </tr>
                 </thead>
@@ -161,11 +159,10 @@ const WorkStatus = () => {
                   <th scope="col" className="border-b flex items-center">
                     <div className='flex w-24 items-center py-6'>
                       <span className='text-sm font-bold text-gray-800 mr-2 ml-4'>실적</span>
-                      <span className="material-icons mr-4 text-blue-400">info</span>
+                      <FontAwesomeIcon icon={["fas", "circle-info"]} className="w-4 h-4 mr-2 text-blue-500" />
                     </div>
                     <div className="flex w-96 h-4 bg-gray-200 rounded overflow-hidden">
                       <div className="justify-center overflow-hidden bg-blue-500" role="progressbar" style={{ width: '2.1%' }} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-
                     </div>
                     <span className='w-24 ml-4 mr-6 text-sm justify-end'>2.1%</span>
                   </th>
@@ -175,7 +172,7 @@ const WorkStatus = () => {
                   <th scope="col" className="flex items-center">
                     <div className='flex w-24 items-center text-center py-6'>
                       <span className='text-sm font-bold text-gray-800 mr-2 ml-4'>Billing</span>
-                      <span className="material-icons mr-4 text-blue-400">info</span>
+                      <FontAwesomeIcon icon={["fas", "circle-info"]} className="w-4 h-4 mr-2 text-blue-500" />
                     </div>
                     <div className="flex w-96 h-4 bg-gray-200 rounded overflow-hidden">
                       <div className="justify-center overflow-hidden bg-blue-500" role="progressbar" style={{ width: '0.0%' }} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
@@ -192,7 +189,7 @@ const WorkStatus = () => {
           <div className="grid grid-cols">
             <div className="flex flex-cols mt-5 justify-between">
               <button type="button" className="inline-flex py-2 px-4 rounded-full border border-gray-400 bg-white text-gray-400 font-bold shadow-sm align-middle transition-all text-xs">
-                엑셀 다운로드
+                엑셀 다운로드 <FontAwesomeIcon icon={["fas", "download"]} className="w-4 h-4 ml-2" />
               </button>
               <span className="inline-flex items-center text-sm text-gray-600">총 69건</span>
             </div>

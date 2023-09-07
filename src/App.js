@@ -14,7 +14,14 @@ import { BrowserView } from 'react-device-detect'
 import GoogleLayout from './components/GoogleLayout'
 import WorkStatus from './components/WorkStatus'
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 
+
+// FontAwesome 아이콘 불러옴
+library.add(fab, far, fas);
 
 function App() {
   // 작은 규모의 스타일을 관리할 때 내부에서 스타일 객체 정의
